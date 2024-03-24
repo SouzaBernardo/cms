@@ -1,0 +1,24 @@
+spring:
+  sql:
+    init:
+      mode: always
+  application:
+    name: cms
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    password: postgres
+    username: postgres
+    driver-class-name: org.postgresql.Driver
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/cms
+  docker:
+    compose:
+      lifecycle-management: start_only
+
+server:
+  tomcat:
+    threads:
+      max: 250
