@@ -3,10 +3,15 @@ package com.cms.core.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
+@Getter
 @Entity
 public class Page {
     @Id
@@ -14,12 +19,7 @@ public class Page {
     private Integer id;
     private String name;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
+    @OneToMany(mappedBy = "page")
+    private List<Section> structure;
 }
 

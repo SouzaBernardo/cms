@@ -7,3 +7,11 @@ services:
       - 'POSTGRES_USER=postgres'
     ports:
       - '5432:5432'
+  mongodb:
+    image: 'mongo:latest'
+    environment:
+      - 'MONGO_INITRD_DATABASE=cms'
+      - 'MONGO_INITRD_ROOT_PASSWORD=mongo'
+      - 'MONGO_INITRD_ROOT_USERNAME=mongo'
+    ports:
+      - '27017:27017'
