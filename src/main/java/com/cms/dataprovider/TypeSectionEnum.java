@@ -1,4 +1,4 @@
-package com.cms.core.domain;
+package com.cms.dataprovider;
 
 public enum TypeSectionEnum {
     BANNER
