@@ -22,10 +22,13 @@ dependencies {
 	implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.mapstruct:mapstruct:1.6.0.Beta1")
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testAndDevelopmentOnly("org.springframework.boot:spring-boot-devtools")
+	testImplementation("org.testcontainers:postgresql")
+	testImplementation("org.springframework.boot:spring-boot-testcontainers")
+	testImplementation("org.testcontainers:junit-jupiter")
 }
 
 tasks.withType<Test> {
