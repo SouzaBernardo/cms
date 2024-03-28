@@ -12,9 +12,6 @@ create table if not exists section
     page_id int references page(id)
 );
 
--- delete from section;
--- delete from page;
-
 insert into page(name) values ('pagina 1');
 insert into page(name) values ('home');
 insert into page(name) values ('favoritos');

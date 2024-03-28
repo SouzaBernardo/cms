@@ -16,18 +16,23 @@ repositories {
 }
 
 dependencies {
-	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
-	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+	compileOnly("org.projectlombok:lombok")
+
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 	implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.mapstruct:mapstruct:1.6.0.Beta1")
-	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
+
 	runtimeOnly("org.postgresql:postgresql")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
 	testAndDevelopmentOnly("org.springframework.boot:spring-boot-devtools")
-	testImplementation("org.testcontainers:postgresql")
+	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
+
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.boot:spring-boot-testcontainers")
+	testImplementation("org.testcontainers:postgresql")
+	testImplementation("com.redis:testcontainers-redis:2.2.1")
 	testImplementation("org.testcontainers:junit-jupiter")
 }
 
